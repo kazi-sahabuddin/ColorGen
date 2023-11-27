@@ -1,5 +1,5 @@
 {
-  "name": "colorcodeconverter",
+  "name": "colorgen",
   "version": "1.0.0",
   "description": " Color code conversion. Hex to RGB and RGB to Hex Color Converter. ",
   "main": "app.js",
