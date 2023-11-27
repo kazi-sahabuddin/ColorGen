@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>Hex To RGB Color converter</title>  
+    <!--
+      <script src="../assets/js/color-modes.js"></script>
+      <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
+    -->
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="modals.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4" tabindex="-1" role="dialog" id="modalSheet">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Display Color</h1>
+        <button class="text-danger color-button" id="random-color">Random Color</button>
+        
+      </div>
+      <div class="modal-body py-0">
+        <div class="color-body" id="color-body"></div>
+      </div>
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Change & Copy Color</h1>
+        <div class="btn-group">
+          <button class="text-danger color-button" id="save-to-custom">Save</button>
+          <button class="text-danger color-button" id="copy-to-clipboard">Copy</button>
+        </div>
+        
+      </div>
+
+      <div class="modal-header border-bottom-0">
+        <h3 class="modal-title fs-6">Select Copy Mode</h3>
+        <div class="d-flex">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="color-mode" id="color-mode-hex" value="hex">
+            <label class="form-check-label " for="color-mode-hex">
+             Hex
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="color-mode" id="color-mode-rgb" value="rgb" checked>
+            <label class="form-check-label " for="color-mode-rgb">
+             RGB
+            </label>
+          </div>
+        </div>        
+      </div>
+      <div class="modal-header border-bottom-0">
+        <form>
+          <div class="row">
+            <div class="col">
+              <label for="text" class="form-label">Hex</label>
+              <input type="text" class="form-control" placeholder="DEE2E6" value="DEE2E6" name="hex" id="hex-input">
+            </div>
+            <div class="col">
+              <label for="text" class="form-label">RGB</label>
+              <input type="text" class="form-control" placeholder="rgb(222,226,230)" value="rgb(222,226,230)" name="rgb" id="rgb-input" disabled>
+            </div>
+          </div>
+        </form>               
+      </div>
+
+      <div class="modal-header border-bottom-0">
+        <h3 class="modal-title fs-6">Adjust RGB color</h3>
+      </div>
+
+      <div class="modal-header border-bottom-0">
+        <div>
+          <div class="slider-label-group d-flex justify-content-between">
+            <p>Red</p>
+            <p id="color-slider-red-label">222</p>
+          </div>          
+          <input type="range" id="color-slider-red"  class="color-slider" min="0" max="255" value="222" oninput="document.getElementById('color-slider-red-label').innerHTML = this.value"/>
+        </div>
+        
+        <div>
+          <div class="slider-label-group d-flex justify-content-between">
+            <p>Green</p>
+            <p id="color-slider-green-label">226</p>
+          </div>          
+          <input type="range" id="color-slider-green"  class="color-slider" min="0" max="255" value="226" oninput="document.getElementById('color-slider-green-label').innerHTML = this.value"/>
+        </div>
+
+        <div>
+          <div class="slider-label-group d-flex justify-content-between">
+            <p>Blue</p>
+            <p id="color-slider-blue-label">230</p>
+          </div>          
+          <input type="range" id="color-slider-blue"  class="color-slider" min="0" max="255" value="230" oninput="document.getElementById('color-slider-blue-label').innerHTML = this.value"/>
+        </div>
+
+      </div>
+
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Preset Colors</h1>
+      </div>
+
+      <div class="modal-body py-0">
+        <div class="preset-colors" id="preset-colors"></div>
+      </div>
+
+      <div class="modal-header border-bottom-0">
+        <h1 class="modal-title fs-5">Custom Colors</h1>
+      </div>
+
+      <div class="modal-body py-0">
+        <div class="preset-colors" id="custom-colors"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/app.js"></script>
+
+      
+  </body>
+</html>
